@@ -1,0 +1,59 @@
+package vivekSorting.listSorting.listComparator4;
+
+//refer Youtube Engineering Digest playlist Java Collections Framework 3/22
+//sorting List Object (Class)  type Using Comparator interface
+//here we are using Java 8 Lambda Expressions in short way
+
+import java.util.Comparator;
+import java.util.List;
+
+public class TrainTest1 {
+
+	public static void main(String[] args) {
+		
+TrainMaster trainMaster = new TrainMaster();
+		
+		List<Train> trainsList = trainMaster.getTrainsDetails();
+		                    
+		trainsList.sort((t1,t2) ->  t1.getId()-t2.getId());                                      // sorted in Ascending order
+		
+		System.out.println("------ sorted By Train Id in Ascending Order -----------");
+		
+		for(Train t : trainsList){
+			
+			System.out.println("id : "+t.getId()+"  train : "+t.getName());
+		}
+		                    
+		trainsList.sort((t1,t2) ->  t2.getId()-t1.getId());                                                                               // sorted in Descending order
+		
+		System.out.println("------ sorted By Train Id in Descending Order -----------");
+		
+		for(Train t : trainsList){
+			
+			System.out.println("id : "+t.getId()+"  train : "+t.getName());
+		}
+		                   
+		
+		trainsList.sort((t1,t2) -> t1.getName().compareTo(t2.getName()));                                                      // sorting in Ascending order
+		
+        System.out.println("------ sorted By Train Name in Ascending Order -----------");
+		
+		 for(Train t : trainsList){
+			
+			System.out.println("id : "+t.getId()+"  train : "+t.getName());
+		}
+		                 
+		 
+			trainsList.sort( (t1,t2) -> t2.getName().compareTo(t1.getName()));                                                            // sorting in Ascending order
+			
+	        System.out.println("------ sorted By Train Name in Descending Order -----------");
+			
+			 for(Train t : trainsList){
+				
+				System.out.println("id : "+t.getId()+"  train : "+t.getName());
+			}
+		
+		
+	}
+	
+}
